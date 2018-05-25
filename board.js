@@ -109,11 +109,6 @@ let sec = -1;
         document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
     }, 1000)
 }
-// function flagCounter() {
-//     let flags = 0;
-//     function num ( val ) { return val > 10 ? val : "0" + val}
-//     flags++;
-    
-// }
+
 
 render();
