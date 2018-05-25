@@ -2,10 +2,12 @@
 let mouseLeft = 1,
     mouseRight = 3;
 
+let flagCount = 0;
+
 canvas.addEventListener('mousedown', function(event) {
     let row = event.clientX - canvas.offsetLeft,
         column = event.clientY - canvas.offsetTop;
-
+    console.log(event)
     // hit test
     let modelCoordinates = viewToModel(row, column);
 
@@ -14,7 +16,13 @@ canvas.addEventListener('mousedown', function(event) {
             openBlock(modelCoordinates.row, modelCoordinates.column);
             break;
         case mouseRight:
-            flagBlock(modelCoordinates.row, modelCoordinates.column);
+            if (flagCount < 10) {
+                flagBlock(modelCoordinates.row, modelCoordinates.column);
+                flagCount++;
+                document.getElementById("score").innerHTML = flagCount;
+                
+            }
+            break;
     }
 
     render();
@@ -24,6 +32,4 @@ canvas.addEventListener('mousedown', function(event) {
 
 canvas.addEventListener('contextmenu', function(event) {
     event.preventDefault();
-    return false;
-}, false);
-
+})

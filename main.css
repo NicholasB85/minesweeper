@@ -30,6 +30,9 @@ input {
     margin: 10px;
 } */
 
-span {
-    color: red
+#score {
+    height: 40px;
+    width: 50px;
+    background-color: burlywood;
+    text-align: center;
 }
