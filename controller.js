@@ -26,3 +26,10 @@ canvas.addEventListener('contextmenu', function(event) {
     event.preventDefault();
     return false;
 }, false);
+
+// timer.addEventListener('click', function(event) {
+//     function myRepeatFunction(event) {
+//         timer.style.backgroundColor = "lightblue";
+//         timer.innerHTML = "Elapsed time: " + event.elapsedTime + " seconds";
+//     }
+// }

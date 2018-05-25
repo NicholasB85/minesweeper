@@ -2,9 +2,13 @@
 let width = 600, height = 600;
 let blockWidth = width / columns,
     blockHeight = height / rows;
-let canvas = document.getElementById('canvas'),
+let canvas = document.getElementById('canvas');
+let score = document.getElementById('score')
+let timer = document.getElementById('timer')
 // using 2d because I do not understand how to use webgl yet.
     ctx = canvas.getContext('2d');
+    // sc = score.getContext('2d');
+    // tm = timer.getContext('2d');
 let colors = [
     'blue', 'darkgreen', 'red', 'navyblue', 'darkred', 'cyan', 'purple', 'black'
 ];
@@ -86,6 +90,7 @@ function renderBlock(row, column) {
         }
     }
 }
+
 // function to display the board to the page
 function render() {
     for (let column = 0; column < rows; ++column) {
@@ -94,5 +99,12 @@ function render() {
         }
     }
 }
+
+var sec = 0;
+    function pad ( val ) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        document.getElementById("seconds").innerHTML=pad(++sec%60);
+        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    }, 1000)
 
 render();

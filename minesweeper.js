@@ -12,12 +12,15 @@ let actionClosed = 0,
 let mineBlock = -1;
 //sets value to player so I can allow the player to click later
 let player = true;
+
 //inbounds function keeps the board generated 
+
+//timer functionality variables
 function inBounds(row, column) {
     return row >= 0 && column >= 0
         && row < columns && column < rows;
 }
-
+//logic to determine number around a given mine.
 function countMinesAround(row, column) {
     let count = 0;
     for (let differentRow = -1; differentRow <= 1; ++differentRow) {
@@ -64,6 +67,7 @@ function init() {
             }
         }
     }
+
 }
 
 function openBlock(row, column) {
@@ -133,6 +137,34 @@ function revealBoard(victorious) {
             state[column][row] = actionOpen;
         }
     }
+}
+
+
+let isGameOver= false;
+let startTime;
+let scores;
+//set time
+function drawElapsedTime(){
+    var elapsed=parseInt((new Date() - startTime)/1000);
+    tm.save();
+    tm.beginPath();
+    tm.fillStyle="red";
+    tm.font="14px Verdana"
+    // draw the running time at half opacity
+    tm.globalAlpha=0.50;
+    tm.fillText(elapsed+" secs",canvas.width-75,25);
+    tm.restore();
+}
+// set score
+function drawFinalScore(){
+    // set the final score just once
+    if(score==null){ score=parseInt((new Date() - startTime)/1000); }
+    sc.save();
+    sc.beginPath();
+    sc.fillStyle="red";
+    sc.font="30px Verdana"
+    sc.fillText("Game Over: "+score+" secs",50,35);
+    sc.restore();
 }
 
 init();

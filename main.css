@@ -3,3 +3,29 @@ canvas {
     display: block;
     margin: auto;
 }
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .timer {
+    width: 150px;
+    height: 40px;
+    background-color: grey;   
+    margin: 10px;
+} */
+
+#score {
+ width: 150px;
+ height: 40px;
+ background-color: grey;  
+ margin: 10px; 
+}
+
+#timer {
+ width: 150px;
+ height: 40px;
+ background-color: grey;   
+ margin: 10px;
+}
