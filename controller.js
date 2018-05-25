@@ -27,9 +27,3 @@ canvas.addEventListener('contextmenu', function(event) {
     return false;
 }, false);
 
-// timer.addEventListener('click', function(event) {
-//     function myRepeatFunction(event) {
-//         timer.style.backgroundColor = "lightblue";
-//         timer.innerHTML = "Elapsed time: " + event.elapsedTime + " seconds";
-//     }
-// }

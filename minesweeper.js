@@ -14,8 +14,9 @@ let mineBlock = -1;
 let player = true;
 
 //inbounds function keeps the board generated 
+//initial value for clicks
+let clicks = 0;
 
-//timer functionality variables
 function inBounds(row, column) {
     return row >= 0 && column >= 0
         && row < columns && column < rows;
@@ -137,34 +138,6 @@ function revealBoard(victorious) {
             state[column][row] = actionOpen;
         }
     }
-}
-
-
-let isGameOver= false;
-let startTime;
-let scores;
-//set time
-function drawElapsedTime(){
-    var elapsed=parseInt((new Date() - startTime)/1000);
-    tm.save();
-    tm.beginPath();
-    tm.fillStyle="red";
-    tm.font="14px Verdana"
-    // draw the running time at half opacity
-    tm.globalAlpha=0.50;
-    tm.fillText(elapsed+" secs",canvas.width-75,25);
-    tm.restore();
-}
-// set score
-function drawFinalScore(){
-    // set the final score just once
-    if(score==null){ score=parseInt((new Date() - startTime)/1000); }
-    sc.save();
-    sc.beginPath();
-    sc.fillStyle="red";
-    sc.font="30px Verdana"
-    sc.fillText("Game Over: "+score+" secs",50,35);
-    sc.restore();
 }
 
 init();
