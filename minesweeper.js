@@ -14,8 +14,10 @@ let mineBlock = -1;
 let player = true;
 
 //inbounds function keeps the board generated 
-//initial value for clicks
-let clicks = 0;
+
+//initial value for flags placed..
+let flags = 0;
+
 
 function inBounds(row, column) {
     return row >= 0 && column >= 0
@@ -33,7 +35,7 @@ function countMinesAround(row, column) {
                 xx = row + differentRow;
             if (inBounds(xx, yy)) {
                 if (board[yy][xx] == mineBlock) {
-                    ++count;
+                    count++;
                 }
             }
         }

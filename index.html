@@ -10,8 +10,9 @@
 <body>
     <canvas id="canvas" width="600" height="600"></canvas>
     <span class="timer" id="minutes"></span>:<span id="seconds"></span>
-    <button id" onclick="startTimer()">Start</button>
-    <div id="score" width="150" height="40"></div>
+    <button id " onclick="startTimer()">Start</button>
+    <input type="button" value="Reset Game" onClick="history.go(0)">
+    <div id="flagCounter"></div>
     <script src="minesweeper.js"></script>
     <script src="board.js"></script>
     <script src="controller.js"></script>

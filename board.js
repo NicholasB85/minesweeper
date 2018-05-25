@@ -67,7 +67,7 @@ function renderBlock(row, column) {
         ctx.fillStyle = 'orange';
     }
     else {
-        ctx.fillStyle = '#999';
+        ctx.fillStyle = '#4d88ff';
     }
 //strokestyle is used to make the lines and their color
     ctx.strokeStyle = 'black';
@@ -99,14 +99,21 @@ function render() {
         }
     }
 }
-
+// setting a function to display a timer when you click the start button.
 function startTimer() {
 
-var sec = 0;
+let sec = -1;
     function pad ( val ) { return val > 9 ? val : "0" + val; }
     setInterval( function(){
         document.getElementById("seconds").innerHTML=pad(++sec%60);
         document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
     }, 1000)
 }
+// function flagCounter() {
+//     let flags = 0;
+//     function num ( val ) { return val > 10 ? val : "0" + val}
+//     flags++;
+    
+// }
+
 render();
